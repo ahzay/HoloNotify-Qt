@@ -170,7 +170,7 @@ TabDialog::TabDialog(QWidget *parent):
             for(int j=0;j<jpGenL[i];j++)
                 connect(allGenTabs[i]->getTuberList()[j]->getButton(),SIGNAL(hovered(QString)),info,SLOT(displayWhenHovered(QString)));
         // declare and configure api fetching
-        apiFetcher * fetcher = new apiFetcher(10000);
+        apiFetcher * fetcher = new apiFetcher(60000);
         for(unsigned long i=0;i<sizeof(allJpGenNames)/sizeof(QString*);i++)
             for(int j=0;j<jpGenL[i];j++)
                 connect(fetcher,SIGNAL(sendStatus(QString , QString)),
